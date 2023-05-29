@@ -14,6 +14,15 @@ module Api
           pets = pets.where(species: filtered_species)
         end
 
+        #If search is not nil, select pets by name, breed or species.
+        search = params[:search]
+        if !search.nil?
+          pets = pets
+                  .where(name: search)
+                  .or(pets.where(breed: search))
+                  .or(pets.where(species: search))
+        end
+
         render json: pets, status: :ok
       end
 

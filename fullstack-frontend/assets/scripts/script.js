@@ -50,9 +50,8 @@ class Pet {
   }
 }
 
-const fetchPets = species => {
-  fetch(`http://127.0.0.1:3000/api/v1/pets${species ? `?species=${species}` : ''}`).then(response => response.json()).then(data => {
-    console.log(data)
+const fetchPets = params => {
+  fetch(`http://127.0.0.1:3000/api/v1/pets?${params.toString()}`).then(response => response.json()).then(data => {
     data.forEach(pet => {
       pushPet(new Pet(
         pet.name,
@@ -69,7 +68,6 @@ const fetchPets = species => {
   });
 }
 
-// Check params for "species" and fetch pets accordingly
+// Pass Browser Params to API Call
 const params = new URLSearchParams(window.location.search);
-const species = params.get('species');
-fetchPets(species);
+fetchPets(params);
