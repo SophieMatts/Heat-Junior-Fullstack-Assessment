@@ -1,11 +1,12 @@
 # frozen_string_literal: true
+require_relative "../../../models/pet"
 
 module Api
   module V1
     class PetsController < ApplicationController
 
       def index
-        pets = []
+        pets = Pet.all
         render json: pets, status: :ok
       end
 
