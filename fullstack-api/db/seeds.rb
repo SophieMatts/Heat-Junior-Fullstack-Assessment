@@ -81,3 +81,15 @@ smokey = Pet.create(
   favorite_food: "fish",
   favorite_toy: "feather"
 )
+
+# Create flipper
+flipper = Pet.create(
+  name: "Flipper",
+  species: "dolphin",
+  age: 10,
+  color: "gray",
+  breed: "bottlenose",
+  favorite_food: "fish",
+  favorite_toy: "beach ball",
+  aquatic: true
+)

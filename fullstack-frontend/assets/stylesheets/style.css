@@ -169,7 +169,7 @@ main {
     grid-template-columns: 1fr;
   }
 }
-.pets__card, .pets__featured_card {
+.pets__card, .pets__aquatic_card, .pets__featured_card {
   border: 3px solid #EFEFEF;
   padding: 20px;
 }
@@ -205,6 +205,10 @@ main {
 }
 .pets__featured_card {
   border: 3px solid gold;
+}
+.pets__aquatic_card {
+  background-color: #00C4FF;
+  color: #FFE7A0;
 }
 
 .main-footer {
