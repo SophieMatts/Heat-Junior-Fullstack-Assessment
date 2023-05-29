@@ -6,7 +6,16 @@ module Api
     class PetsController < ApplicationController
 
       def index
-        pets = Pet.all.order(:featured, :name)
+        pets = Pet.all
+
+        # If sort_option is nil, set featured and name as default sort_option.
+        # Else use the chosen sort_option
+        sort_option = params[:sort_option]
+        if sort_option.nil?
+          pets = pets.order(:featured, :name)
+        else
+          pets = pets.order(:featured, sort_option)
+        end
 
         #If filtered_species is not nil, select pets from filtered_species.
         filtered_species = params[:species]
