@@ -18,7 +18,7 @@ class Pet {
 
   generateCard() {
     return `
-      <div class="pets__card">
+      <div class="${this.featured ? 'pets__featured_card': 'pets__card'}">
         <h2 class="pets__card__title">${this.name}</h2>
         <p class="pets__card__info">Species: ${this.species}</p>
         <p class="pets__card__info">Age: ${this.age}</p>

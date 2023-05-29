@@ -157,6 +157,10 @@ main {
       cursor: pointer;
     }
   }
+  &__featured_card {
+    @extend .pets__card;
+    border: 3px solid gold;
+  }
 }
 
 // Footer
